@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* === Palette de couleurs === */
+:root {
+  --clr-bg-light:   #E3F2FD; /* bleu très clair */
+  --clr-primary:    #1976D2; /* bleu moyen */
+  --clr-accent:     #64B5F6; /* bleu clair intermédiaire */
+  --clr-accent-2:   #0D47A1; /* bleu foncé pour titres */
+  --clr-text-dark:  #333333; /* texte principal sombre */
+  --clr-text-light: #FFFFFF; /* texte clair */
+}
+
+/* Corps de page */
+body {
+  background-color: var(--clr-bg-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 1000px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  box-shadow: 0 35px 55px rgba(0,0,0,0.1);
+}
+
+/* Colonne de gauche */
+.container .left-side {
+  position: relative;
+  background: var(--clr-primary);
+  padding: 40px;
+}
+
+.profileTexte {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* == Effet hover : remplacement de la photo == */
+.imgBx {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: url("images/photo1.jpg") center/cover no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.imgBx:hover {
+  background-image: url("images/photo2.jpg");
+}
+
+.profileTexte h2 {
+  color: var(--clr-text-light);
+  font-size: 1.5em;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+
+.profileTexte h2 span {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.contactInfo {
+  padding-top: 40px;
+}
+
+.title {
+  color: var(--clr-text-light);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.contactInfo ul {
+  position: relative;
+}
+
+.contactInfo ul li {
+  position: relative;
+  list-style: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.contactInfo ul li .icon {
+  display: inline-block;
+  width: 20px;
+  font-size: 18px;
+  color: #BBDEFB;
+}
+
+.contactInfo ul li span {
+  color: var(--clr-text-light);
+  font-weight: 300;
+}
+
+/* Formations */
+.contactInfo.education li {
+  margin-bottom: 15px;
+}
+
+.contactInfo.education h5 {
+  color: var(--clr-accent);
+  font-weight: 500;
+}
+
+.contactInfo.education h4:nth-child(2),
+.contactInfo.education h4 {
+  color: var(--clr-text-light);
+  font-weight: 300;
+}
+
+/* Langues */
+.contactInfo.language .percent {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: var(--clr-accent);
+  display: block;
+  margin-top: 5px;
+}
+
+.contactInfo.language .percent div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--clr-text-dark);
+}
+
+/* Colonne de droite */
+.container .right-side {
+  position: relative;
+  background: #fff;
+  padding: 40px;
+}
+
+/* Sections profil, projets, expériences */
+.about {
+  margin-bottom: 50px;
+}
+
+.about:last-child {
+  margin-bottom: 0;
+}
+
+.title2 {
+  color: var(--clr-accent-2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--clr-text-dark);
+}
+
+/* Expériences */
+.about .box {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+
+.about .box .year_company {
+  min-width: 150px;
+}
+
+.about .box .year_company h5 {
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  font-weight: 600;
+}
+
+/* Compétences */
+.skills .box {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills .box h4 {
+  text-transform: uppercase;
+  color: var(--clr-accent-2);
+  font-weight: 500;
+}
+
+.skills .box .percent {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background: var(--clr-accent);
+}
+
+.skills .box .percent div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--clr-text-dark);
+}
+
+/* Centres d'intérêt */
+.interest ul {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+
+.interest ul li {
+  list-style: none;
+  color: var(--clr-text-dark);
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.interest ul li .fa {
+  color: var(--clr-accent);
+  font-size: 18px;
+  width: 20px;
+}
+
+/* Responsivité */
+@media(max-width:1000px) {
+  .container {
+    margin: 10px;
+    grid-template-columns: repeat(1,1fr);
+  }
+  .interest ul {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px) {
+  .about .box {
+    flex-direction: column;
+  }
+  .about .box .year_company {
+    margin-bottom: 5px;
+  }
+  .interest ul {
+    grid-template-columns: repeat(1,1fr);
+  }
+  .skills .box {
+    grid-template-columns: repeat(1,1fr);
+  }
+}
