@@ -270,3 +270,78 @@ p {
     grid-template-columns: repeat(1,1fr);
   }
 }
+
+/* ===== Projets (intégration palette/rythme existants) ===== */
+.projects {
+  list-style: none;
+  display: grid;
+  gap: 18px;                /* rythme proche de .about .box */
+  margin-top: 10px;
+}
+
+.project {
+  background: #FFFFFF;      /* même fond que .right-side */
+  border-left: 4px solid var(--clr-primary);
+  padding: 16px 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border-radius: 6px;
+}
+
+.project-title {
+  color: var(--clr-accent-2);       /* cohérence avec .title2 et h4 skills */
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 8px;
+  text-transform: none;             /* on laisse les titres projets non upper */
+}
+
+.project-points {
+  list-style: none;                 /* bullets custom ci-dessous */
+  margin-left: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.project-points li {
+  position: relative;
+  padding-left: 1.15rem;
+  color: var(--clr-text-dark);
+  line-height: 1.5;
+}
+
+/* puce ronde cohérente avec la palette */
+.project-points li::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.58em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--clr-accent);
+  box-shadow: 0 0 0 2px rgba(100,181,246,0.25); /* halo discret */
+}
+
+/* liens éventuels (GitHub/demo) dans les projets */
+.project a {
+  color: var(--clr-primary);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(25,118,210,0.4);
+}
+.project a:hover {
+  border-bottom-style: solid;
+}
+
+/* Responsive aligné à tes breakpoints */
+@media (max-width: 1000px) {
+  .projects { gap: 16px; }
+  .project  { padding: 14px 16px; }
+}
+
+@media (max-width: 600px) {
+  .project-title { font-size: 1rem; }
+  .project       { padding: 12px 14px; }
+}
+
+
