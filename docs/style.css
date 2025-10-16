@@ -377,6 +377,48 @@ p {
   all: unset;
 }
 
+/* ===== Fix couleur & reset doux pour PROJETS ===== */
+/* On neutralise d'anciens styles éventuels sans casser le thème global */
+.reset-projets,
+.reset-projets * {
+  text-decoration: none;
+  box-shadow: none;
+  background: transparent;
+  border: 0;
+}
+
+/* Couleurs IDENTIQUES au reste de la colonne droite */
+#projets.title2 { color: var(--clr-accent-2); }         /* même bleu titre */
+.reset-projets { 
+  color: var(--clr-text-dark);                          /* texte principal */
+  margin: 10px 0 0 18px; 
+  padding: 0;
+  list-style: disc;                                     
+}
+
+/* Puces = même couleur que le texte (sinon différence visible) */
+.reset-projets li::marker { color: var(--clr-text-dark); }
+
+/* Espacement identique aux autres listes de ta page */
+.reset-projets > li { margin-bottom: 14px; }
+
+.reset-projets > li > strong {
+  color: var(--clr-text-dark);
+  font-weight: 700;                                      /* même graisse */
+}
+
+/* Sous-liste : mêmes puces et même couleur */
+.reset-projets > li > ul {
+  list-style: circle;
+  margin: 6px 0 0 18px;
+  padding: 0;
+}
+.reset-projets > li > ul li::marker { color: var(--clr-text-dark); }
+
+/* Sécurité : si des styles précédents trainent sous .project/.projects */
+.project, .projects .project-title, .projects .project-points { all: unset; }
+
+
 
 
 
