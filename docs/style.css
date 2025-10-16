@@ -419,6 +419,18 @@ p {
 .project, .projects .project-title, .projects .project-points { all: unset; }
 
 
+/* Forcer le titre de projet en noir pur */
+.reset-projets > li > strong {
+  color: #000 !important;            /* noir, pas gris */
+  -webkit-text-fill-color: #000;     /* edge case WebKit */
+  font-weight: 700;
+}
+/* Si le titre est cliquable, on garde le noir */
+.reset-projets > li > strong a {
+  color: inherit !important;
+  text-decoration: none;
+}
+
 
 
 
