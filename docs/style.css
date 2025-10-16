@@ -323,7 +323,6 @@ p {
   box-shadow: 0 0 0 2px rgba(100,181,246,0.25); /* halo discret */
 }
 
-/* liens éventuels (GitHub/demo) dans les projets */
 .project a {
   color: var(--clr-primary);
   text-decoration: none;
@@ -343,5 +342,41 @@ p {
   .project-title { font-size: 1rem; }
   .project       { padding: 12px 14px; }
 }
+
+/* Reset doux pour la section Projets */
+.projects {
+  list-style: disc;
+  margin: 10px 0 0 18px;  /* même retrait que tes autres listes */
+  padding: 0;
+  color: var(--clr-text-dark);
+}
+
+.projects > li {
+  margin-bottom: 14px;
+}
+
+.projects > li > strong {
+  font-weight: 700;         /* même graisse que tes titres de listes */
+  color: var(--clr-text-dark);
+}
+
+.projects ul {
+  list-style: circle;       /* sous-puces comme ailleurs */
+  margin-left: 18px;
+  margin-top: 6px;
+}
+
+.projects li::before {      /* supprime toute puce custom résiduelle */
+  content: none !important;
+}
+
+/* Si tu avais ajouté un style 'card' avant, on le neutralise */
+.project,
+.project-title,
+.project-points {
+  all: unset;
+}
+
+
 
 
